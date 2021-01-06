@@ -15,6 +15,7 @@ resource "aws_vpc" "io_test" {
 
 resource "aws_subnet" "io_test" {
   vpc_id     = aws_vpc.io_test.id
+  map_public_ip_on_launch = true
   cidr_block = "10.0.1.0/24"
   tags       = local.io_tags
 }
